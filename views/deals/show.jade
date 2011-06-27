@@ -1,0 +1,48 @@
+- styles.set ("touch_deal_page")
+
+- if (campaign.sold_out)
+  #deal(class = 'sold-out')
+-else
+  #deal
+    - if (campaign.isSoldOut)
+      #sold-out
+    #deal-hd
+      != partial('campaign_title', { campaign: campaign });
+      #more    
+      
+    #remaining_time
+    
+    .photos
+      div
+        .overlay
+          img(src=campaign.largeImageUrl, width = "270")
+        .tag
+          span#l-tag DISCOUNT
+          span#l-value #{campaign.options[0].discountPercent} %
+    - if (!campaign.options[0].externalUrl)
+      #num_sold_cont
+        != partial('number_sold', { campaign: campaign });
+    != partial('buy_button', { campaign: campaign });
+    ul#deal-info
+      li#about
+        h2 ABOUT THIS DEAL
+        #fix1= campaign.highlightsHtml
+      li#fine-print
+        h2 THE FINE PRINT
+        ul 
+          li
+            em= groupon_conditions_ul_touch(campaign)
+      li#loc
+        h2 THE COMPANY        
+        != partial('deal_company', { campaign: campaign });
+    ul#deal-nav.menu
+      li
+        a( id = "show-details") More about this deal
+          span
+      - if (campaign.options[0].redemptionLocations.length)
+        li
+          a( href = "#", target = 'blank', class ='last') Show on map
+            span
+
+- bottom.set ({template: "./deals/bottom", args: { campaign: campaign, sideDeals: sideDeals} })
+              

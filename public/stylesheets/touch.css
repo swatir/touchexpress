@@ -1,0 +1,349 @@
+/*/ */
+/* Copyright (c) 2010, Groupon. All rights reserved. */
+/* Author: Swati Raju */
+/* version: 1.0.0 */
+/* Description: Touch Main Styles */
+/*/ */
+/* Basic Element Styles */
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #4aa2cf;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+body {
+  background: #f0f2f2 url(http://www.groupon.com/images/touch/bg.png?iaoFLxJh) repeat-x top left;
+  color: #101b36;
+  font-family: Helvetica;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none; }
+  body > * {
+    display: none; }
+  body.fullscreen > * {
+    min-height: 460px !important; }
+  body.landscape > * {
+    min-height: 320px; }
+  body > .current {
+    display: block !important;
+    overflow: hidden; }
+
+body.android.fullscreen > * {
+  min-height: 600px !important; }
+
+.selectable, input, textarea {
+  -webkit-user-select: auto; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+em {
+  font-weight: bold;
+  font-style: normal; }
+
+/* Basic Class & ID Styles */
+.sub-page .header {
+  text-align: center; }
+.sub-page.loading {
+  background: white url("http://www.groupon.com/images/loading-spinner.gif") no-repeat center center;
+  height: 100%; }
+
+a.back {
+  background: transparent url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -27px 0px no-repeat;
+  display: inline-block;
+  float: left;
+  height: 31px;
+  position: absolute;
+  margin-top: 3px;
+  width: 43px; }
+
+.android a.back {
+  margin-top: 1px; }
+
+.header, header {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#595959), color-stop(0.5, #484848), color-stop(0.5, #424242), to(#323232));
+  color: white;
+  height: 38px;
+  padding-top: 2px;
+  width: 100%; }
+  .header h2, header h2 {
+    color: white;
+    font-size: 14pxslideup;
+    font-weight: bold;
+    margin-top: 8px;
+    text-shadow: -1px -1px 1px #2e2e2e; }
+  .header span, header span {
+    float: left;
+    padding: 8px; }
+    .header span a, header span a {
+      color: white;
+      padding: 2px 0;
+      text-decoration: none; }
+      .header span a span, header span a span {
+        background: transparent url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) 0px 5px no-repeat;
+        display: inline-block;
+        float: right; }
+  .header ul, header ul {
+    float: right; }
+  .header li, header li {
+    float: left;
+    height: 31px;
+    margin-top: 2px;
+    padding-right: 2px;
+    width: 37px; }
+    .header li a, header li a {
+      display: block;
+      height: 33px;
+      width: 37px; }
+  .header li#my a, header li#my a {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -70px 0px no-repeat; }
+  .header li#profile a, header li#profile a {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -107px 0px no-repeat; }
+  .header li#now a, header li#now a {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -202px 0px no-repeat; }
+
+.page-header {
+  background: url(http://www.groupon.com/images/touch/groupon_logo.png?ylXnZYh_) no-repeat 4px 0; }
+  .page-header h1 {
+    font-size: 20px; }
+
+#announcement {
+  background: #fffdc1;
+  border: 1px solid #dad8a0;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  text-align: left; }
+
+#locations-div {
+  background-color: white;
+  position: absolute;
+  width: 100%; }
+  #locations-div a {
+    border-bottom: 1px solid #d0dbe3;
+    color: black;
+    display: block;
+    padding: 12px 0 12px 10px;
+    text-decoration: none; }
+  #locations-div a.grey {
+    background-color: #edf0f2; }
+  #locations-div a.back {
+    border-bottom: 0;
+    padding: 0; }
+  #locations-div a span {
+    display: inline-block;
+    float: left;
+    height: 15px;
+    margin-right: 5px;
+    width: 14px; }
+  #locations-div a.current span {
+    background: transparent url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -154px 0px no-repeat; }
+
+form fieldset, .fieldset {
+  background: white;
+  border: 1px solid #86ac57;
+  border-bottom: none;
+  padding: 0.5em 0.75em; }
+  form fieldset div, .fieldset div {
+    margin-top: 5px; }
+  form fieldset input, .fieldset input {
+    border: none;
+    font-size: 15px;
+    float: right;
+    margin-top: -3px;
+    padding: 3px 0;
+    text-align: right;
+    -webkit-appearance: searchfield;
+    width: 180px; }
+    form fieldset input.tooltip, .fieldset input.tooltip {
+      background: url(http://www.groupon.com/images/touch/tt.png?UT3w4Ou6) no-repeat; }
+  form fieldset input:focus, .fieldset input:focus {
+    background: white;
+    background-image: none;
+    text-align: left;
+    -webkit-box-shadow: none;
+    -webkit-border-image: none; }
+  form fieldset.first, .fieldset.first {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px; }
+  form fieldset.last, .fieldset.last {
+    border-bottom: 1px solid #86ac57;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px; }
+
+.android fieldset input {
+  background-color: #f7fcfe;
+  border: 1px solid #eeeeee;
+  -webkit-border-radius: 5px;
+  text-align: left; }
+
+#deal-hd {
+  margin: 5px 5px 3px;
+  padding-right: 10px; }
+
+h1.show-details {
+  font-size: 18px;
+  float: left;
+  line-height: 20px;
+  text-shadow: 2px 2px 2px #a7c286;
+  width: 91%; }
+  h1.show-details span {
+    font-size: 30px; }
+
+#footer {
+  margin: 30px 0 20px;
+  text-align: center; }
+  #footer ul {
+    display: inline-block;
+    width: 300px; }
+  #footer ul.single {
+    width: 150px; }
+  #footer li {
+    display: inline-block;
+    float: left;
+    width: 149px; }
+  #footer li.first {
+    border-right: 2px solid #0981be; }
+  #footer a {
+    color: #0981be;
+    font-weight: bold;
+    font-size: 14px; }
+  #footer #promo {
+    display: block;
+    margin-top: 5px;
+    width: 100%; }
+
+a.button, button, input[type="submit"], .button {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#83c04f), color-stop(0.5, #73ab42), color-stop(0.5, #65a130), to(#375e0d));
+  border: 2px solid #b4b8b6;
+  color: white;
+  display: block;
+  font-size: 23px;
+  font-weight: bold;
+  margin: 6px 0;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: center;
+  -webkit-border-radius: 8px;
+  text-shadow: 1px -2px 2px #70875c; }
+
+button, input[type="submit"] {
+  width: 100%; }
+
+a.button.cancel {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), color-stop(0.5, #f4f4f4), color-stop(0.5, #f2f2f3), to(#d8d8d9));
+  color: black;
+  text-shadow: none; }
+a.button.alert {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cf3734), color-stop(0.5, #c53230), color-stop(0.5, #c12927), to(#b42624));
+  text-shadow: 1px -2px 2px #8b2422; }
+
+a.secondary {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3e5e23), color-stop(0.5, #35511c), color-stop(0.5, #2f4c15), to(#1c3107));
+  padding: 8px 0;
+  text-shadow: 1px -2px 2px #243814; }
+
+input[type="submit"].progress, button.progress, a.button.progress {
+  background: #5bc6e0 url(http://www.groupon.com/images/touch/ajax-loader32.gif?as-qBl_c) no-repeat 95% center;
+  border: 2px solid #5bc6e0;
+  text-shadow: 1px -2px 2px #518896; }
+
+ul.menu {
+  border-top: 1px solid #b4b5b5;
+  margin-top: 3px; }
+  ul.menu li a {
+    background: white;
+    border-bottom: 1px solid #b4b5b5;
+    color: #5bc6e0;
+    display: block;
+    font-size: 18px;
+    padding: 12px;
+    text-decoration: none; }
+    ul.menu li a span {
+      background: transparent url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -16px 0px no-repeat;
+      display: inline-block;
+      float: right;
+      height: 17px;
+      margin-right: 5px;
+      position: relative;
+      width: 11px; }
+
+/*@media only screen and -webkit-min-device-pixel-ratio: 2
+ * form fieldset input.tooltip
+ *   background: image-url("/images/touch/tt2x.png") no-repeat */
+form {
+  margin: 0 10px; }
+  form #f-name.tooltip {
+    background-position: 17px -133px; }
+  form #f-email.tooltip {
+    background-position: right -82px; }
+  form .password.tooltip {
+    background-position: 13px -162px; }
+
+.android form #f-name.tooltip {
+  background-position-x: -80px; }
+
+.padlock {
+  color: #596674;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 20px;
+  width: 200px;
+  text-align: center; }
+  .padlock span {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -188px 0px no-repeat;
+    display: inline-block;
+    float: left;
+    height: 16px;
+    width: 13px; }
+
+.d-list {
+  background: #fafafa;
+  border-top: 1px solid #c6d3dc;
+  margin-top: -2px; }
+  .d-list li {
+    border-bottom: 1px solid #c6d3dc;
+    clear: both;
+    height: 63px; }
+    .d-list li.grey {
+      background: #edf0f2; }
+    .d-list li a {
+      text-decoration: none; }
+  .d-list .l {
+    float: left;
+    height: 65px;
+    margin-top: -2px;
+    width: 100px; }
+    .d-list .l img {
+      margin-top: 2px;
+      padding: 1px; }
+  .d-list .r {
+    color: black;
+    float: left;
+    margin-left: 10px;
+    width: 210px; }
+    .d-list .r h3 {
+      color: #101b36;
+      font-size: 13px;
+      padding-top: 2px; }
+    .d-list .r span {
+      font-size: 14px;
+      font-weight: bold; }
+    .d-list .r em span {
+      font-size: 13px;
+      font-weight: normal; }
+
+/* 2.0 Styles */
+.header .btn {
+  border: 1px solid #434c31;
+  display: inline-block;
+  height: 30px;
+  margin: 2px 4px;
+  -webkit-border-radius: 5px;
+  width: 34px; }
+  .header .btn a {
+    font-size: 18px; }

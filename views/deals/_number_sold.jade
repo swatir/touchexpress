@@ -1,0 +1,14 @@
+-if (campaign.isSoldOut || campaign.isTipped)
+  .tipped
+    span
+      div
+      span(class = "number") #{campaign.options[0].soldQuantity} 
+      span bought. The deal is on!
+-else
+  #slider-cont
+  -width = campaign_progress_touch(campaign)
+  #slider(style = "#{width != 0 ? 'width: ' + width.to_s + 'px' : 'visibility: hidden'}")
+  #slider-bubble(style = "#{width != 0 ? 'left: ' + (width - 15).toString() + 'px' : 'visibility: hidden'}") 
+    span= campaign.soldQuantity
+    #pointer
+  p= tipping_message(campaign)

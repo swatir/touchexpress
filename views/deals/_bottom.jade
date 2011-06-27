@@ -1,0 +1,33 @@
+- campaign = args.campaign
+- sideDeals = args.sideDeals
+#details.sub-page
+  div.header
+    a( id = "details-back", class = "back")
+    h2 Details
+  #fix2= campaign.pitchHtml
+  .deal-button
+    -if (campaign.options.length > 1)
+      a(class = 'multi-buy buy button', id = 'buy', href = '#') Buy Now
+        span
+          span
+    -else
+       a(href = campaign.options[0].buyUrl, id = 'buy', class = 'button') Buy Now!
+#more-deals.sub-page
+  div.header
+    a#more-back.back
+    h2 More Deals
+  #more-deals-bd
+    ul(class='d-list')
+      - var grey = true;
+      - for(var d in sideDeals)
+        - if (sideDeals.hasOwnProperty(d))
+          - var cls = grey ? "grey" : "";
+          - grey = !grey;
+          li(class = "#{cls}")
+            a(href = "/deals/#{sideDeals[d].id}")
+              div(class ="l")
+                img(src = "#{sideDeals[d].mediumImageUrl}")
+              div(class = "r")
+                h3=getArea(sideDeals[d])
+                span= sideDeals[d].title
+              div(class = "clr")

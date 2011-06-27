@@ -1,0 +1,14 @@
+.deal-button
+  -if (campaign.isSoldOut)
+    #sold-out-button.button Sorry, Sold Out :(
+  -else if (campaign.status == "closed")
+    #sold-out-button.button 
+      Sorry, Deal Closed :(
+  -else
+    -if (campaign.options.length > 1)
+      a(class = 'multi-buy buy button', id = 'buy', href = "#")
+        Buy Now
+        span
+          span
+    -else
+      a(href = campaign.options[0].buyUrl, id = 'buy', class = 'button') Buy Now!

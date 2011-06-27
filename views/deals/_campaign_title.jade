@@ -1,0 +1,6 @@
+h1(class = 'show-details')
+  - i = campaign.title.indexOf(" ");
+  - head = campaign.title.substring(0, i)
+  - tail = campaign.title.substring(i)
+  span= head
+  = tail

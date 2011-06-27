@@ -1,0 +1,49 @@
+!!!XML
+!!!Mobile
+
+html(xmlns = 'http://www.w3.org/1999/xhtml', 'xmlns:fb' = 'http://www.facebook.com/2008/fbml', 'manifest' ='/manifests/touch.manifest')
+  head
+    title= title || "Groupon Deal of the Day"
+    meta(name = 'viewport', content = 'width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0' )
+    meta(name = 'description', content = 'Find Great Deals on Fun Things to Do' )
+    meta(name = 'format-detection', content = 'telephone=no')
+    link(rel='stylesheet', href='/stylesheets/touch.css')
+    link(rel='stylesheet', href='/stylesheets/#{styles.get()}.css')
+    
+  body
+    #main.current.page
+      .header
+        span#loc-menu
+          a(href = '/cities', 'data-ajax' = 'false')
+            span 
+            = "Chicago"
+        ul#left-menu
+          li#now
+            a( href = "/now", 'data-ajax' = 'false')
+            a( href = "/now", id = "now-new-badge", 'data-ajax' = 'false')
+              h6 New!
+
+          li#my
+            a( href = "/mygroupons", 'data-ajax' = 'false')
+          li#profile
+            a(href = "/login", 'data-ajax' = 'false')
+      != body
+      #footer
+        ul(class = "twin")
+          li.first
+            a(href = "#", 'data-ajax' = 'false') Get the iPhone App
+          li
+            a(href = "#", id = "full", 'data-ajax' = 'false') Switch to Full Site
+        a(href = "#", id = "promo", 'data-ajax' = 'false')
+          img(src = 'http://www.groupon.com/images/touch/ad_iphone.png')
+    - if (bottom.get())   
+      != partial(bottom.get().template, { args: bottom.get().args });
+      
+  script(type='text/javascript')
+    if (typeof Groupon == 'undefined') { Groupon = {}; }
+    if (typeof Groupon.Touch == 'undefined') { Groupon.Touch = {}; }
+    if (typeof Groupon.TouchData == 'undefined') { Groupon.TouchData = {}; }
+    Groupon.TouchData.Division = "chicago";
+    Groupon.TouchData.Area = ""; 
+  script(src="/javascripts/touch_application.js", type="application/javascript")
+  script(src="/javascripts/touch_deal_page.js", type="application/javascript")  

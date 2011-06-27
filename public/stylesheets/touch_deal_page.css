@@ -1,0 +1,498 @@
+/*/ */
+/* Copyright (c) 2010, Groupon. All rights reserved. */
+/* Author: Swati Raju */
+/* version: 1.0.0 */
+/* Description: Animation Styles, all the slippery/slidey goodness */
+/*/ */
+body {
+  -webkit-perspective: 800;
+  -webkit-transform-style: preserve-3d; }
+  body > * {
+    left: 0;
+    min-height: 420px;
+    position: absolute;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
+    -webkit-backface-visibility: hidden;
+    -webkit-box-sizing: border-box; }
+
+.in, .out {
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 350ms; }
+
+.slide.in {
+  -webkit-animation-name: slideinfromright; }
+  .slide.in.reverse {
+    -webkit-animation-name: slideinfromleft; }
+
+.slide.out {
+  -webkit-animation-name: slideouttoleft; }
+  .slide.out.reverse {
+    -webkit-animation-name: slideouttoright; }
+
+@-webkit-keyframes slideinfromright {
+  from {
+    -webkit-transform: translateX(100%); }
+
+  to {
+    -webkit-transform: translateX(0); } }
+
+@-webkit-keyframes slideinfromleft {
+  from {
+    -webkit-transform: translateX(-100%); }
+
+  to {
+    -webkit-transform: translateX(0); } }
+
+@-webkit-keyframes slideouttoleft {
+  from {
+    -webkit-transform: translateX(0); }
+
+  to {
+    -webkit-transform: translateX(-100%); } }
+
+@-webkit-keyframes slideouttoright {
+  from {
+    -webkit-transform: translateX(0); }
+
+  to {
+    -webkit-transform: translateX(100%); } }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+.slideup.in {
+  -webkit-animation-name: slideup;
+  z-index: 10; }
+
+.slideup.out {
+  -webkit-animation-name: dontmove;
+  z-index: 0; }
+
+.slideup.out.reverse {
+  z-index: 10;
+  -webkit-animation-name: slidedown; }
+
+.slideup.in.reverse {
+  z-index: 0;
+  -webkit-animation-name: dontmove; }
+
+@-webkit-keyframes slideup {
+  from {
+    -webkit-transform: translateY(100%); }
+
+  to {
+    -webkit-transform: translateY(0); } }
+
+@-webkit-keyframes slidedown {
+  from {
+    -webkit-transform: translateY(0); }
+
+  to {
+    -webkit-transform: translateY(100%); } }
+
+@-webkit-keyframes dontmove {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 1; } }
+
+/*/ */
+/* Copyright (c) 2010, Groupon. All rights reserved. */
+/* Author: Swati Raju */
+/* version: 1.0.0 */
+/* Description: Deal Page */
+/*/ */
+/* Deals: Main Page */
+#deal {
+  position: relative; }
+
+li#now {
+  padding-right: 0;
+  margin-right: 2px;
+  overflow: hidden;
+  width: 86px; }
+
+li#now a {
+  float: right;
+  position: relative;
+  z-index: 2; }
+
+li#now #now-new-badge {
+  border: 1px solid white;
+  border-radius: 5px 5px;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fcf8d5), color-stop(0.5, #e5e1be), color-stop(0.5, #e5e1be), to(#cecca5));
+  display: none;
+  height: auto;
+  padding: 4px 0;
+  position: relative;
+  right: -50px;
+  margin-left: 2px;
+  margin-top: 2px;
+  text-decoration: none;
+  width: auto;
+  -webkit-box-shadow: #262626 2px 2px 3px;
+  z-index: 1; }
+  li#now #now-new-badge h6 {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) no-repeat right 3px;
+    color: #323234;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 10px;
+    position: relative;
+    right: -5px; }
+
+@-webkit-keyframes slipin {
+  from {
+    right: -50px; }
+
+  to {
+    right: 3px; } }
+
+li#now #now-new-badge.show-badge {
+  -webkit-animation-name: slipin;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  display: block; }
+
+#sold-out, #sold-out-pledge {
+  background: url(http://www.groupon.com/images/touch/sold-out.png?DNJ95PrX) no-repeat top right;
+  height: 129px;
+  left: 0;
+  position: absolute;
+  top: -7px;
+  width: 129px; }
+
+.header span {
+  border: 1px solid #434c31;
+  -webkit-border-radius: 5px;
+  padding: 3px;
+  margin-top: 2px;
+  margin-left: 2px; }
+  .header span a {
+    font-size: 18px; }
+    .header span a span {
+      border: none;
+      padding: 7px 16px 7px 0; }
+
+#remaining_time {
+  color: white;
+  clear: both;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  height: 15px;
+  padding-top: 2px;
+  margin-left: 6px; }
+
+.photos {
+  padding: 1px 0 6px;
+  position: relative;
+  text-align: center; }
+  .photos div {
+    height: 140px;
+    margin: 10px auto;
+    width: 270px; }
+    .photos div .overlay {
+      border: 1px solid #62695b;
+      height: 140px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 270px;
+      -webkit-transform: rotate(1deg);
+      -webkit-box-shadow: #888888 2px 2px 3px; }
+      .photos div .overlay img {
+        margin-top: -10px; }
+    .photos div .tag {
+      background: url(http://www.groupon.com/images/touch/saletag.png?uHSJlDxC) no-repeat left top;
+      color: white;
+      float: right;
+      font-size: 14px;
+      height: 81px;
+      margin: 60px -26px 0 0;
+      position: relative;
+      text-align: center;
+      width: 128px; }
+      .photos div .tag span {
+        -webkit-transform: rotate(-9deg); }
+  .photos span {
+    display: block;
+    font-weight: bold;
+    margin-right: 24px; }
+  .photos span#l-tag {
+    font-size: 15px;
+    margin-top: 13px; }
+  .photos span#l-value {
+    font-size: 30px;
+    margin-right: 15px; }
+
+.android .photos div .overlay {
+  -webkit-transform: none; }
+
+.webos .photos div .overlay {
+  border: none; }
+
+#num_sold_cont {
+  margin: 0 auto 0;
+  width: 251px; }
+
+#deal.sold-out #num_sold_cont {
+  text-align: center; }
+
+#slider-cont {
+  -webkit-border-image: url(http://www.groupon.com/images/touch/slider-bg.png?7MfeTsSb) 2 5 2 5 stretch stretch;
+  border-width: 2px 5px;
+  height: 13px;
+  margin-top: 10px;
+  width: 241px; }
+
+#slider {
+  -webkit-border-image: url(http://www.groupon.com/images/touch/slider.png?FeZewi2C) 2 5 2 5 stretch stretch;
+  border-width: 2px 5px;
+  height: 8px;
+  margin-top: -15px;
+  margin-left: 1px; }
+
+#slider-bubble {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  top: -32px; }
+  #slider-bubble #pointer {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -144px 0px no-repeat;
+    height: 7px;
+    width: 10px;
+    margin: -1px auto 0; }
+  #slider-bubble span {
+    -webkit-border-image: url(http://www.groupon.com/images/touch/bubble-bg.png?27rTBFJC) 2 7 3 7 stretch stretch;
+    border-width: 2px 7px 3px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 17px;
+    height: 18px;
+    text-shadow: -2px -2px 2px #8e4e32;
+    width: auto; }
+
+.tipping {
+  color: #687182;
+  font-size: 13px;
+  margin-top: -26px;
+  text-align: center; }
+
+.tipped {
+  color: black;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  top: -13px;
+  width: 241px; }
+  .tipped div {
+    background: url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -168px 0px no-repeat;
+    display: inline-block;
+    height: 22px;
+    margin-right: 3px;
+    position: relative;
+    width: 20px; 
+    top: 5px; }
+  .tipped span span {
+    background: none; }
+
+ul li h2 {
+  background-color: #b8dce6;
+  color: white;
+  font-size: 16px;
+  padding: 3px 7px;
+  margin: 5px;
+  text-shadow: 2px -2px 2px #a9cad3;
+  -webkit-border-radius: 5px; }
+
+#deal-info li ul {
+  padding: 0 8px; }
+  #deal-info li ul li {
+    padding: 1px 0; }
+  #deal-info li ul .merchant_url {
+    padding-bottom: 10px; }
+  #deal-info li ul a.mapit, #deal-info li ul a.url {
+    background: #5bc6e0;
+    color: white;
+    display: inline-block;
+    margin-top: 2px;
+    padding: 3px 10px;
+    text-decoration: none;
+    -webkit-border-radius: 5px; }
+  #deal-info li ul li.addr {
+    padding: 5px 0; }
+    #deal-info li ul li.addr span {
+      display: block; }
+  #deal-info li ul ul.adr {
+    margin: 0;
+    padding: 0; }
+
+#about ul {
+  list-style-type: disc;
+  margin-left: 20px; }
+#about p {
+  margin-left: 7px; }
+#about img {
+  margin: 7px; }
+
+#fine-print ul, #loc ul {
+  margin-left: 5px; }
+
+.deal-button {
+  left: 0px;
+  width: 100%; }
+  .deal-button #sold-out-button {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#91c2c5), color-stop(0.5, #81b3b6), color-stop(0.5, #7bafb2), to(#5c9194));
+    margin: 5px;
+    padding: 14px 0 13px;
+    text-shadow: -1px -1px 2px #5f7f81;
+    width: auto; }
+  .deal-button a {
+    display: block;
+    height: 30px;
+    margin: 5px;
+    width: auto; }
+    .deal-button a span {
+      border-left: 1px solid #496614;
+      display: inline-block;
+      float: right;
+      height: 49px;
+      margin-top: -10px;
+      width: 50px; }
+      .deal-button a span span {
+        background: transparent url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) 0px 5px no-repeat;
+        border: none;
+        display: block;
+        height: 14px;
+        margin: 17px;
+        width: 16px; }
+
+.landscape #deal-footer {
+  top: 180px; }
+
+#more {
+  background: transparent url(http://www.groupon.com/images/touch/sprite.png?T1IyfXcE) -243px 0px no-repeat;
+  height: 50px;
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  visibility: hidden;
+  width: 49px; }
+  #more.top_0 {
+    top: 0px; }
+
+#more-deals .d-list li {
+  height: auto; }
+  #more-deals .d-list li .clr {
+    clear: both; }
+
+/* Deals: Details Page */
+#details {
+  font-size: 14px; }
+  #details h2 {
+    font-size: 18px; }
+  #details h3 {
+    margin-left: 20px; }
+  #details p {
+    margin: 10px; }
+  #details li {
+    margin: 20px 10px; }
+  #details blockquote li {
+    background: url(http://www.groupon.com/images/groupon/icons/quote.gif?mJo6EQ21) no-repeat left top;
+    color: #666666;
+    padding-left: 20px; }
+  #details em {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 13px; }
+
+/* Deals: Multi-deal Page */
+#multi-deal-bd {
+  background-color: #edf0f2;
+  margin-top: -2px; }
+  #multi-deal-bd ul {
+    border-top: 1px solid #d0dbe3;
+    min-height: 310px; }
+    #multi-deal-bd ul li {
+      background-color: #75b93c;
+      background: -webkit-gradient(linear, left top, left bottom, from(#75b93c), to(#5ea116));
+      border-bottom: 1px solid #d0dbe3;
+      width: 100%; }
+      #multi-deal-bd ul li a {
+        text-decoration: none; }
+        #multi-deal-bd ul li a .l {
+          background-color: #edf0f2;
+          float: left;
+          min-height: 75px;
+          width: 80%; }
+          #multi-deal-bd ul li a .l h3 {
+            font-size: 15px;
+            padding: 10px 5px; }
+          #multi-deal-bd ul li a .l .details {
+            float: left;
+            font-weight: bold; }
+          #multi-deal-bd ul li a .l div {
+            color: black;
+            font-size: 14px;
+            float: right;
+            padding: 5px; }
+          #multi-deal-bd ul li a .l .expiration_date {
+            font-size: 13px;
+            float: left; }
+      #multi-deal-bd ul li .r {
+        color: white;
+        float: right;
+        font-size: 25px;
+        font-weight: bold;
+        min-height: 55px;
+        padding-top: 20px;
+        text-align: center;
+        width: 20%; }
+      #multi-deal-bd ul li .clr {
+        clear: both; }
+    #multi-deal-bd ul li.white .l {
+      background-color: white; }
+    #multi-deal-bd ul li.sold_out {
+      background: #bdbdbd;
+      position: relative; }
+      #multi-deal-bd ul li.sold_out a {
+        color: #c5c5c5; }
+        #multi-deal-bd ul li.sold_out a div {
+          color: #c5c5c5; }
+        #multi-deal-bd ul li.sold_out a .r {
+          color: #dddddd; }
+
+#sold-out-pledge {
+  background: url(http://www.groupon.com/images/touch/sold-out-multi.png?JnW5mDqK) no-repeat top right;
+  left: -10px;
+  width: 163px;
+  top: 0; }
+
+#multi-deal-ft {
+  margin: 0 5px; }
+
+.landscape #multi-deal-bd ul {
+  min-height: auto; }
+
+.d-list li .r span {
+  color: #4aa2cf;
+  font-size: 13px;
+  font-weight: bold; }

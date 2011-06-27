@@ -1,0 +1,26 @@
+.company.vcard
+  ul
+    li
+      em= campaign.options[0].title
+
+    - if (campaign.options[0].redemptionLocations.length)
+      - for (var l in campaign.options[0].redemptionLocations)
+        - location = campaign.options[0].redemptionLocations[l];
+        ul.adr
+          li.addr
+            span=location.name
+            span.street-address= location.streetAddress1
+            - if (location.streetAddress2)
+              span= location.streetAddress2
+            span.locality
+              = location.city
+              ,
+              = location.state
+              = location.postalCode
+            - if (location.notes)
+              span= location.notes
+            - if (campaign.options[0].redemptionLocations.length > 1)
+              a( href = "#", class = "mapit") "Map it!"
+    -if (campaign.merchant.websiteUrl)
+      li.merchant_url
+        a( href = campaign.merchant.websiteUrl, class = 'url') #{campaign.merchant.websiteUrl}
